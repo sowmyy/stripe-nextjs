@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { checkout } from '../checkout'
 
 export default function Home() {
   return (
@@ -17,14 +18,29 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+
+          <div>
             <Image src="/images/medium.png" alt="NFT" width={400} height={400} />
             <p>Art Piece 1</p>
-          </a>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <Image src="/images/IMG_4860.png" alt="NFT" width={400} height={400} />
+            <button onClick={(() => {
+                checkout({
+                  lineItems: [
+                    {
+                      price: "price_1LKJFNSJFDFywDTJsJeN1jw1",
+                      quantity: 1
+                    }
+                  ]
+                })
+              })}>Buy!
+            </button>
+          </div>
+            
+          <div>
+             <Image src="/images/IMG_4860.png" alt="NFT" width={400} height={400} />
             <p>Art Piece 2</p>
-          </a>
+            <button>Buy!</button>
+          </div>
+          
         </div>
       </main>
 

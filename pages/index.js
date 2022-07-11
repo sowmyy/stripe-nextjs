@@ -19,9 +19,9 @@ export default function Home() {
 
         <div className={styles.grid}>
 
-          <div>
-            <Image src="/images/medium.png" alt="NFT" width={400} height={400} />
-            <p>Art Piece 1</p>
+          <div className={styles.card}>
+            <Image src="/images/IMG_4860.png" alt="NFT" width={200} height={200} />
+            <p>Starter</p>
             <button onClick={(() => {
                 checkout({
                   lineItems: [
@@ -31,16 +31,42 @@ export default function Home() {
                     }
                   ]
                 })
-              })}>Buy!
+              })}>Buy @ $7
             </button>
           </div>
             
-          <div>
-             <Image src="/images/IMG_4860.png" alt="NFT" width={400} height={400} />
-            <p>Art Piece 2</p>
-            <button>Buy!</button>
+          <div className={styles.card}>
+             <Image src="/images/IMG_4860.png" alt="NFT" width={200} height={200} />
+            <p>Pro</p>
+            <button onClick={(() => {
+                checkout({
+                  lineItems: [
+                    {
+                      price: "price_1LKJGDSJFDFywDTJdNnDZwCF",
+                      quantity: 1
+                    }
+                  ]
+                })
+              })}>Buy @ $19
+            </button>
           </div>
           
+          <div className={styles.card}>
+             <Image src="/images/IMG_4860.png" alt="NFT" width={200} height={200} />
+            <p>Enterprise</p>
+            <button onClick={(() => {
+                checkout({
+                  lineItems: [
+                    {
+                      price: "price_1LKJFNSJFDFywDTJsJeN1jw1",
+                      quantity: 1
+                    }
+                  ]
+                })
+              })}>Buy @ $119
+            </button>
+          </div>
+
         </div>
       </main>
 

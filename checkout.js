@@ -17,13 +17,9 @@ export async function checkout({lineItems}) {
     await stripe.redirectToCheckout({
         mode: 'payment',
         lineItems,
-        successUrl: `${window.location.origin}? session_id={CHECKOUT_SESSION_ID}/successPurchase`,
+        amount: '250',
+        
+        successUrl: `${window.location.origin}/successPurchase`,
         cancelUrl: window.location.origin
     })
-
-    await stripe.retrievePaymentIntent('{PAYMENT_INTENT_CLIENT_SECRET}')
-        .then(function(result) {
-        console.log('result', result)
-        // Handle result.error or result.paymentIntent
-    });
  }

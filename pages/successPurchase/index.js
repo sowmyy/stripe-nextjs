@@ -1,5 +1,5 @@
 function SuccessPurchase() {
-  return <div>You have successfully purchased the NFT</div>
+  return <div>You have successfully Subscribed !</div>
 }
 
 export default SuccessPurchase
